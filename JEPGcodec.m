@@ -1,6 +1,7 @@
 clc;clear;
 %im=imread('cat.jpg');
-im=imread('d.jpg');
+%im=imread('d.jpg');
+im=imread('lena.tif');
 
 %% 像素值转为yuv
 im_yuv = func_rgb2yuv(im);
