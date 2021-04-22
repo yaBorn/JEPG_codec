@@ -28,7 +28,8 @@ dct1 = im_dct(:,:,1);
 dct2 = im_dct2(:,:,1);
 figure; imshow( uint8( im_dct(:,:,1))); title('未量化dct');
 figure; imshow( uint8( im_dct2(:,:,1))); title('量化dct');
-
+imwrite(uint8( im_dct(:,:,1)),'未量化dct.jpg','jpg');
+imwrite( uint8( im_dct2(:,:,1)),'量化dct.jpg','jpg');
 
 %% IDCT变换 显示
 im_idct = func_idct( im_dct);
@@ -36,6 +37,8 @@ im_idct2 = func_idct( im_dct2);
 
 figure; imshow( func_yuv2rgb( im_idct));
 title('未量化'); % 显示IDCT结果
+imwrite(func_yuv2rgb( im_idct),'未量化.jpg','jpg');
 
 figure; imshow( func_yuv2rgb( im_idct2));
 title('量化'); % 显示量化IDCT结果
+imwrite(func_yuv2rgb( im_idct2),'量化.jpg','jpg');
